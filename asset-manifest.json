@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/minimal-midi/static/css/main.d9e0c657.css",
-    "main.js": "/minimal-midi/static/js/main.42c2cb14.js",
+    "main.css": "/minimal-midi/static/css/main.76bcfc55.css",
+    "main.js": "/minimal-midi/static/js/main.eeaf05ab.js",
     "static/js/453.bd9de0cc.chunk.js": "/minimal-midi/static/js/453.bd9de0cc.chunk.js",
     "index.html": "/minimal-midi/index.html",
-    "main.d9e0c657.css.map": "/minimal-midi/static/css/main.d9e0c657.css.map",
-    "main.42c2cb14.js.map": "/minimal-midi/static/js/main.42c2cb14.js.map",
+    "main.76bcfc55.css.map": "/minimal-midi/static/css/main.76bcfc55.css.map",
+    "main.eeaf05ab.js.map": "/minimal-midi/static/js/main.eeaf05ab.js.map",
     "453.bd9de0cc.chunk.js.map": "/minimal-midi/static/js/453.bd9de0cc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d9e0c657.css",
-    "static/js/main.42c2cb14.js"
+    "static/css/main.76bcfc55.css",
+    "static/js/main.eeaf05ab.js"
   ]
 }
