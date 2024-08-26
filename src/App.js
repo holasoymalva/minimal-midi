@@ -1,17 +1,19 @@
 // src/App.js
-import React from 'react';
+import React, { useState } from 'react';
+import WelcomeScreen from './components/WelcomeScreen';
 import MidiGrid from './components/MidiGrid';
 import './App.css';
 
 const App = () => {
+  const [showMidi, setShowMidi] = useState(false);
+
+  const handleEndWelcome = () => {
+    setShowMidi(true);
+  };
+
   return (
     <div className="app">
-      <header className="app-header">
-        <h1>minimal-midi</h1>
-      </header>
-      <main>
-        <MidiGrid />
-      </main>
+      {showMidi ? <MidiGrid /> : <WelcomeScreen onEnd={handleEndWelcome} />}
     </div>
   );
 };
