@@ -1,38 +1,112 @@
-.App {
+/* src/App.css */
+.app {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: white;
+  color: black;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.app-header {
+  margin: 20px 0;
+}
+
+.music-generator {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.button-circle {
+  width: 30px;
+  height: 30px;
+  background-color: gray;
+  border-radius: 50%;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.button-circle.active {
+  background-color: tomato;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-gap: 15px;
+  justify-content: center;
+}
+
+.pad {
+  width: 80px;
+  height: 80px;
+  background-color: #333;
   color: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.pad:hover {
+  background-color: #444;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pad:active {
+  background-color: #555;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+  width: 200px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  background: #ddd;
+  outline: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+  border-radius: 5px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #aaa;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #aaa;
+  border-radius: 50%;
+  cursor: pointer;
 }
