@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/minimal-midi/static/css/main.d9e0c657.css",
+    "main.js": "/minimal-midi/static/js/main.42c2cb14.js",
+    "static/js/453.bd9de0cc.chunk.js": "/minimal-midi/static/js/453.bd9de0cc.chunk.js",
+    "index.html": "/minimal-midi/index.html",
+    "main.d9e0c657.css.map": "/minimal-midi/static/css/main.d9e0c657.css.map",
+    "main.42c2cb14.js.map": "/minimal-midi/static/js/main.42c2cb14.js.map",
+    "453.bd9de0cc.chunk.js.map": "/minimal-midi/static/js/453.bd9de0cc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d9e0c657.css",
+    "static/js/main.42c2cb14.js"
+  ]
+}
