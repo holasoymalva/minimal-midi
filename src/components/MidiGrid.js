@@ -3,8 +3,42 @@ import React, { useState, useRef } from 'react';
 
 const MidiGrid = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [midiAccess, setMidiAccess] = useState(null);
+  const [output, setOutput] = useState(null);
   const [volume, setVolume] = useState(50);
   const [tempo, setTempo] = useState(120);
+
+  const handleMidiButtonPress = (note) => {
+    if (output) {
+      const noteOnMessage = [0x90, note, 0x7f]; // Comando para "nota ON"
+      output.send(noteOnMessage); // Envía el mensaje MIDI
+      setTimeout(() => {
+        const noteOffMessage = [0x80, note, 0x40]; // Comando para "nota OFF"
+        output.send(noteOffMessage); // Envía el mensaje MIDI
+      }, 200);
+    }
+  };
+
+  const connectMidi = async () => {
+    if (navigator.requestMIDIAccess) {
+      try {
+        const midi = await navigator.requestMIDIAccess();
+        setMidiAccess(midi);
+
+        const outputs = Array.from(midi.outputs.values());
+        if (outputs.length > 0) {
+          setOutput(outputs[0]);
+          console.log("Conectado al dispositivo MIDI:", outputs[0].name);
+        } else {
+          alert("No se encontraron dispositivos de salida MIDI.");
+        }
+      } catch (err) {
+        console.error("Error al acceder a dispositivos MIDI:", err);
+      }
+    } else {
+      alert("La API Web MIDI no es compatible con este navegador.");
+    }
+  };
 
   const handlePadPress = (note) => {
     console.log(`Pad pressed: ${note}`);
@@ -26,6 +60,7 @@ const MidiGrid = () => {
         <div className="button-circle" onClick={() => setIsPlaying(!isPlaying)}>
         </div>
         <div className={`button-circle ${isPlaying ? 'active' : ''}`}></div>
+        <button className="connect" onClick={connectMidi}>Connect MIDI</button>
       </div>
       <div className="grid">
         {[...Array(9)].map((_, index) => (
