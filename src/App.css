@@ -60,6 +60,21 @@
   background-color: tomato;
 }
 
+.connect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: tomato;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+  margin: 5px;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 80px);
@@ -126,16 +141,24 @@
   cursor: pointer;
 }
 
-.connect {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: tomato;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.2s ease;
+
+.app-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 3s ease;
+}
+
+.welcome-container {
+  transition: opacity 3s ease;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
 }
